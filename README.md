@@ -48,4 +48,4 @@ docker compose run --rm snort3 -r /files/file.pcap
 # To-Do
 - [ ] Create and configure snort.conf file.
 - [x] Add docker-compose.yml file.
-- [x] Push image to Docker Hub.
+- [x] Push image to ghcr.io.
