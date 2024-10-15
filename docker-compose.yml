@@ -1,7 +1,7 @@
 services:
   snort3:
 #    build: .     # used github actions
-    image: ghcr.io/ptr33/snort3
+    image: ghcr.io/ptr33/docker-snort3
     container_name: snort3
     stdin_open: true
     tty: true
