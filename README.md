@@ -7,7 +7,6 @@ Unofficial [snort3](https://www.snort.org/snort3) IDS/IPS software docker image.
 
 # Information
 * From : Debian Bookworm Slim
-* Size : 756 MB
 * Time : Build from source. Take multiples minutes depending on your system
 * Snort Version : 3.3.7.0
 * Libdaq Version : 3.0.16
