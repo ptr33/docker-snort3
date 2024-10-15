@@ -1,6 +1,6 @@
 # Docker Snort3
 
-![image](https://github.com/MikeHorn-git/docker-snort3/assets/123373126/b822ff3c-d7d5-4f7d-97a0-9e937d4fef7b)
+![image](https://github.com/user-attachments/assets/473c37ec-f137-4813-be4a-c2c23f9dfa21)
 
 # Description
 Unofficial [snort3](https://www.snort.org/snort3) IDS/IPS software docker image.
@@ -14,14 +14,14 @@ Unofficial [snort3](https://www.snort.org/snort3) IDS/IPS software docker image.
 * Trivy : 0 unfixed vulnerabilities.
 
 # Installation
-## Docker Hub
+## ghcr.io
 ```bash
-docker pull mikehorn/snort3:latest
+docker pull ghcr.io/ptr33/snort3
 ```
 
 ## Build Yourself
 ```bash
-git clone https://github.com/MikeHorn-git/docker-snort3.git
+git clone https://github.com/ptr33/docker-snort3.git
 cd docker-snort3/
 docker compose build
 ```
