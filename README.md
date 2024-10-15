@@ -15,7 +15,7 @@ Unofficial [snort3](https://www.snort.org/snort3) IDS/IPS software docker image.
 # Installation
 ## ghcr.io
 ```bash
-docker pull ghcr.io/ptr33/snort3
+docker pull ghcr.io/ptr33/docker-snort3
 ```
 
 ## Build Yourself
