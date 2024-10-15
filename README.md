@@ -32,13 +32,14 @@ To use file from your host :
 * Place the files you want in host : /home/$USER/snort
 * In the docker container they are available at /files
 
-## Example 1
+## Example 1 - Network scanning
+Replace enp2s0 with your network device.
 ```bash
-docker compose run --rm snort3 -i eth0
+docker-compose run --rm snort3 -i enp2s0
 ```
 ## Example 2
 ```bash
-docker compose run --rm snort3 -r /files/file.pcap
+docker-compose run --rm snort3 -r /files/file.pcap
 ```
 
 # Security
