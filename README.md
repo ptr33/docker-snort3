@@ -7,16 +7,15 @@ Unofficial [snort3](https://www.snort.org/snort3) IDS/IPS software docker image.
 
 # Information
 * From : Debian Bookworm Slim
-* Size : 756 MB
 * Time : Build from source. Take multiples minutes depending on your system
-* Snort Version : 3.3.1.0
+* Snort Version : 3.3.7.0
 * Libdaq Version : 3.0.16
 * Trivy : 0 unfixed vulnerabilities.
 
 # Installation
 ## ghcr.io
 ```bash
-docker pull ghcr.io/ptr33/snort3
+docker pull ghcr.io/ptr33/docker-snort3
 ```
 
 ## Build Yourself
@@ -33,13 +32,14 @@ To use file from your host :
 * Place the files you want in host : /home/$USER/snort
 * In the docker container they are available at /files
 
-## Example 1
+## Example 1 - Network scanning
+Replace enp2s0 with your network device.
 ```bash
-docker compose run --rm snort3 -i eth0
+docker-compose run --rm snort3 -i enp2s0
 ```
 ## Example 2
 ```bash
-docker compose run --rm snort3 -r /files/file.pcap
+docker-compose run --rm snort3 -r /files/file.pcap
 ```
 
 # Security
@@ -49,4 +49,4 @@ docker compose run --rm snort3 -r /files/file.pcap
 # To-Do
 - [ ] Create and configure snort.conf file.
 - [x] Add docker-compose.yml file.
-- [x] Push image to Docker Hub.
+- [x] Push image to ghcr.io.
