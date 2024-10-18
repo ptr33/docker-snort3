@@ -59,7 +59,8 @@ RUN wget -nv https://www.snort.org/downloads/community/snort3-community-rules.ta
         /snort/snort3-community-rules 
 
 # install pulledport from https://github.com/shirkdog/pulledpork3
-RUN cd /snort &&
+RUN apt-get install -y --no-install-recommends git &&
+    cd /snort &&
     git clone https://github.com/shirkdog/pulledpork3.git &&
     cd pulledpork3
 RUN mkdir /usr/local/etc/pulledpork/ &&
