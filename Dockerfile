@@ -59,15 +59,15 @@ RUN wget -nv https://www.snort.org/downloads/community/snort3-community-rules.ta
         /snort/snort3-community-rules 
 
 # install pulledport from https://github.com/shirkdog/pulledpork3
-RUN apt-get install -y --no-install-recommends git &&
-    cd /snort &&
-    git clone https://github.com/shirkdog/pulledpork3.git &&
+RUN apt-get install -y --no-install-recommends git &&                                       \
+    cd /snort &&                                                                            \
+    git clone https://github.com/shirkdog/pulledpork3.git &&                                \
     cd pulledpork3
-RUN mkdir /usr/local/etc/pulledpork/ &&
-    cp etc/pulledpork.conf /usr/local/etc/pulledpork/
-RUN mkdir /usr/local/bin/pulledpork/ &&
-    cp pulledpork.py /usr/local/bin/pulledpork/ &&
-    cp -r lib/ /usr/local/bin/pulledpork/ &&
+RUN mkdir /usr/local/etc/pulledpork/ &&                                                     \
+    cp etc/pulledpork.conf /usr/local/etc/pulledpork/                                       \
+    mkdir /usr/local/bin/pulledpork/ &&                                                     \
+    cp pulledpork.py /usr/local/bin/pulledpork/ &&                                          \
+    cp -r lib/ /usr/local/bin/pulledpork/ &&                                                \
     cp etc/pulledpork.conf /usr/local/etc/pulledpork3/
 # test it
 RUN pulledpork.py -V
