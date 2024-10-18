@@ -1,0 +1,6 @@
+#!/bin/bash
+BRANCH=`git branch --show-current`
+REPO=docker-snort3
+if [ $BRANCH = "main" ]; then BRANCH="latest"; fi
+docker build . -t ghcr.io/ptr33/$REPO:$BRANCH   && \
+docker push ghcr.io/ptr33/$REPO:$BRANCH
