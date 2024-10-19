@@ -50,13 +50,15 @@ RUN wget -nv https://github.com/snort3/snort3/archive/refs/tags/${SNORT_VERSION}
     cd build &&                                                                             \
     make -j "$(nproc)" install &&                                                           \
     rm -rf /snort/${SNORT_VERSION}.tar.gz                                                   \
-        /snort/snort3-${SNORT_VERSION} 
+        /snort/snort3-${SNORT_VERSION} &&                                                   \
+    ln -s /snort/bin/snort /usr/local/bin/snort
 
-RUN wget -nv https://www.snort.org/downloads/community/snort3-community-rules.tar.gz &&     \
-    tar -xf snort3-community-rules.tar.gz &&                                                \
-    cp /snort/snort3-community-rules/snort3-community.rules /etc/snort/rules &&             \
-    rm -rf /snort/snort3-community-rules.tar.gz                                             \
-        /snort/snort3-community-rules 
+# following section is replaced by pulledport
+#RUN wget -nv https://www.snort.org/downloads/community/snort3-community-rules.tar.gz &&     \
+#    tar -xf snort3-community-rules.tar.gz &&                                                \
+#    cp /snort/snort3-community-rules/snort3-community.rules /etc/snort/rules &&             \
+#    rm -rf /snort/snort3-community-rules.tar.gz                                             \
+#        /snort/snort3-community-rules 
 
 # install pulledport from https://github.com/shirkdog/pulledpork3
 RUN apt-get update && apt-get install -y --no-install-recommends git python3-pip &&         \
@@ -70,6 +72,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git python3-pip
     cp etc/pulledpork.conf /usr/local/etc/pulledpork/ &&                                    \
     python3 -m pip install -r /snort/pulledpork3/requirements.txt --break-system-packages && \
     mkdir /usr/local/etc/so_rules &&                                                        \
+    mkdir /usr/local/etc/rules &&                                                          \
     cd /usr/local/bin && ln -s pulledpork/pulledpork.py .
 
 # test it
