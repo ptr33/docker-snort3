@@ -68,10 +68,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends git python3-pip
     cp pulledpork.py /usr/local/bin/pulledpork/ &&                                          \
     cp -r lib/ /usr/local/bin/pulledpork/ &&                                                \
     cp etc/pulledpork.conf /usr/local/etc/pulledpork/ &&                                    \
-    python3 -m pip install -r /snort/pulledpork3/requirements.txt --break-system-packages
+    python3 -m pip install -r /snort/pulledpork3/requirements.txt --break-system-packages && \
+    mkdir /usr/local/etc/so_rules &&                                                        \
+    cd /usr/local/bin && ln -s pulledpork/pulledpork.py .
 
 # test it
-RUN /usr/local/bin/pulledpork/pulledpork.py -V
+RUN pulledpork.py -V
 
 RUN ldconfig
 
